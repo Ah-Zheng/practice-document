@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+        - 80:80
+        - 443:443
+    volumes:
+        - ~/project/www:/usr/share/nginx/html
+        - ~/project/conf/nginx.conf:/etc/nginx/nginx.conf
+        - ~/project/logs:/var/log/nginx

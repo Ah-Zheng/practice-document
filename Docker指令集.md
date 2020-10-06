@@ -1,5 +1,9 @@
 # Docker 指令
 
+## 參考文件
+
+- https://yeasy.gitbook.io/docker_practice/
+
 ## image
 
 - 查詢映像檔
@@ -45,7 +49,7 @@
 - 執行容器內終端機
     $ docker exec -it (container_id) bash
 
-## docker compose 
+## docker compose
 
 - version
 
@@ -53,9 +57,9 @@
 
 - image: 要啟用的映像檔
 
-- build: 執行Dockerfile
+- build: 指定Dockerfile的路徑
 
-- command
+- command: 容器啟動後默認執行的命令
 
 - container_name: 容器名稱
 
@@ -64,3 +68,7 @@
 - dns
 
 - tmpfs
+
+- volume: 數據掛載路徑
+
+- ports: 暴露的端口
