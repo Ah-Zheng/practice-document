@@ -44,3 +44,23 @@
 
 - 執行容器內終端機
     $ docker exec -it (container_id) bash
+
+## docker compose 
+
+- version
+
+- services
+
+- image: 要啟用的映像檔
+
+- build: 執行Dockerfile
+
+- command
+
+- container_name: 容器名稱
+
+- depends_on: 設定先啟用的容器
+
+- dns
+
+- tmpfs
