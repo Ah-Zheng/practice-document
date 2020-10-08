@@ -1,12 +1,23 @@
-version: "3.3"
+version: "3"
 services:
+  php-workspace:
+    image: php:7.4-fpm
+    build: ./php
+    volumes:
+      - ./code:/var/www/html/
+
   nginx:
     image: nginx:latest
-    container_name: nginx
+    build: ./nginx
     ports:
-        - 80:80
-        - 443:443
+      - "8080:8080"
     volumes:
-        - ~/project/www:/usr/share/nginx/html
-        - ~/project/conf/nginx.conf:/etc/nginx/nginx.conf
-        - ~/project/logs:/var/log/nginx
+      - ./nginx/logs:/var/log/nginx
+      - ./code:/usr/share/nginx/html/
+
+  db:
+    image: mariadb
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
