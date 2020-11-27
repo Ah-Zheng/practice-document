@@ -6,8 +6,9 @@
 - https://yeasy.gitbook.io/docker_practice/compose/compose_file 簡體
 - https://juejin.im/post/6844903927184359438 範例：nginx + php-fpm + mysql + redis
 - https://juejin.im/post/6844903837774397447#heading-25 範例：nginx + vue
+- https://medium.com/10coding/node-js-docker-%E7%B3%BB%E5%88%97-%E4%BA%8C-%E4%BD%BF%E7%94%A8-docker-compose-%E5%B7%A5%E5%85%B7%E5%BF%AB%E9%80%9F%E5%95%9F%E5%8B%95%E6%9C%8D%E5%8B%99-569a4ae43656 docker-compose 快速啟動
 
-## image
+## image 映像檔
 
 - 查詢映像檔
     $ docker search 關鍵字
@@ -21,7 +22,7 @@
 - 刪除映像檔
     $ docker rmi (images_id)
 
-## container
+## container 容器
 
 - 啟動容器
     $ docker run [options] (映像檔)
@@ -98,3 +99,23 @@
 - volume: 數據掛載路徑(冒號前是本機路徑，冒號後則為虛擬機內的路徑)
 
 - ports: 暴露的端口
+
+## Dockerfile
+
+- FROM: 以哪個image為基底進行改良
+
+- WORKDIR: 設定當前工作目錄
+
+- RUN: 執行Shell指令，Dockerfile中的每個指令都是啟動一個container
+
+- COPY: 複製[來源文件\目錄]到image中的[文件\目錄]中
+    ex: COPY [--chown=<user>:<group>] <source path>... <dist path>
+
+- ADD: COPY的強化版，允許source path是一個URL
+
+- CMD: 與RUN相似，用於指定Container啟動時首要執行的命令
+    ex: CMD <command> or CMD [“command name”, argv1, argv2, …]
+
+- ENV: 設置環境變數
+
+- EXPOSE: 開放PORT
