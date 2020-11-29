@@ -74,7 +74,17 @@
     $ docker-compose up [options]
 
     [options]
-    --build
+    --build 執行dockerfile
+    -d      在背景執行
+
+- 查看容器運作
+    $ docker-compose ps
+
+- 查看容器的log
+    $ docker-compose logs [container name]
+
+- 進入容器
+    $ docker-compose exec <service> bash
 
 - version: 模板版本號
 
