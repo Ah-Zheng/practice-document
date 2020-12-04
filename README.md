@@ -1,5 +1,9 @@
 # 練習用文件
 
-- Git指令集
+- Git 指令集
 
-- Docker指令集
+- Docker 指令集
+
+- Heroku 指令
+
+- SQL 程式碼 & 指令

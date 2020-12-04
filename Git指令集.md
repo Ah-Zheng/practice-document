@@ -344,6 +344,42 @@
 
     > $ git checkout '分支名'
 
+## 在一台電腦使用多個 Git 帳號
+
+- 先產生 SSH-KEY 並儲存至指定位置
+  $ ssh-keygen -t rsa -C (jerry092383@gmail.com)
+
+- 將 SSH-Key 貼至 Github 中
+
+- 將私鑰加到 ssh-agent 中，若有重啟電腦，需要重新此段
+  $ ssh-add ~/.ssh/id_rsa_personal
+
+- 修改 Config 檔資料
+  $ vi ~/.ssh/config
+
+  #Default GitHub
+  Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+  #New GitHub
+  Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_personal
+
+
+- 測試是否正常
+  $ ssh -T (git@jerry092383@gmail.com)
+
+- 取消 Global 設定，避免 pull 資料時會使用 Global 的 Mail 或 UserName
+  $git config — global — unset user.name
+  $git config — global — unset user.email
+
+- 設定各 Repository 的 User 資料
+  $git config  user.email "userName@address"
+  $git config  user.name "userName"
+
 ## 上開發站流程
 
   + 於 skype 通知要上開發及測試
@@ -414,4 +450,3 @@
   + 於 skype 通知上各分支成功
 
     > ex: on onion dev qa done
-
