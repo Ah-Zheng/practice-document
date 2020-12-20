@@ -1,11 +1,4 @@
 # Git Ftp
-
-- url: ftp://ftp.ah-zheng.com
-- account: ah-zheng.ml@ah-zheng.ml
-	lkmwtzyn
-- password: ah-zheng.ml
-	C)tE50:a2qJ6rU
-
 ## 基本指令
 
 - 初始化
