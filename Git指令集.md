@@ -251,6 +251,12 @@
 
     > $ git remote -v
 
+  + 刪除遠端練線
+    > $ git remote remove (遠端名稱)
+
+  + 重新命名遠端
+    > $ git remote rename (舊名稱) (新名稱)
+
 ## GitHub建立遠端儲存庫 (初始 commit 由遠端建立)
 
   + 先至GtHub建立專案，是否建立 README.md 檔案，選是(勾選)
